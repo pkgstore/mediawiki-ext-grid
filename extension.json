@@ -1,0 +1,52 @@
+{
+  "name": "MW_EXT_Grid",
+  "version": "1.0.0",
+  "author": [
+    "[https://ihub.to/ iHub TO]",
+    "[https://kitsune.solar/ Kitsune Solar]",
+    "..."
+  ],
+  "url": "https://ihub.to/",
+  "descriptionmsg": "mw-grid-desc",
+  "license-name": "[https://choosealicense.com/licenses/mit/ MIT]",
+  "type": "parserhook",
+  "require": {
+    "MediaWiki": ">= 1.31.0",
+    "extensions": {
+      "MW_EXT_Kernel": "*"
+    }
+  },
+  "AutoloadClasses": {
+    "MediaWiki\\Extension\\PkgStore\\MW_EXT_Grid": "MW_EXT_Grid.class.php"
+  },
+  "Hooks": {
+    "ParserFirstCallInit": [
+      "MediaWiki\\Extension\\PkgStore\\MW_EXT_Grid::onParserFirstCallInit"
+    ],
+    "BeforePageDisplay": [
+      "MediaWiki\\Extension\\PkgStore\\MW_EXT_Grid::onBeforePageDisplay"
+    ]
+  },
+  "MessagesDirs": {
+    "MW_EXT_Grid": [
+      "i18n"
+    ]
+  },
+  "ResourceModules": {
+    "ext.mw.grid.styles": {
+      "styles": [
+        "styles/theme.css"
+      ],
+      "position": "top",
+      "targets": [
+        "desktop",
+        "mobile"
+      ]
+    }
+  },
+  "ResourceFileModulePaths": {
+    "localBasePath": "modules",
+    "remoteExtPath": "MW_EXT_Grid/modules"
+  },
+  "manifest_version": 2
+}
